@@ -5,6 +5,7 @@ const TodoList = () => {
   const [tasks, setTasks] = useState([]);
   const [input, setInput] = useState('');
 
+
   const addTask = () => {
     if (input.trim() !== '') {
       setTasks([...tasks, { id: Date.now(), text: input, completed: false }]);
@@ -24,6 +25,8 @@ const TodoList = () => {
     setTasks(updatedTasks);
   };
 
+  
+
   return (
     <div className="todo-list bg-gradient-to-b from-blue-300 via-blue-300 shadow-md rounded px-8 pt-6 pb-8 mb-4">
         <h1 className='text-4xl text-blue-200' >Todo App</h1>
@@ -39,8 +42,9 @@ const TodoList = () => {
         <Todo
           key={task.id}
           task={task}
-          completeTask={completeTask}
+          // completeTask={completeTask}
           deleteTask={deleteTask}
+          
         />
       ))}
     </div>
